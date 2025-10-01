@@ -1,8 +1,8 @@
+import 'package:evently_c16/ui/screens/login/LoginScreen.dart';
+
 enum AppRoutes {
-  HomeScreen("home"),
-  OnBoardingScreen("onBoarding"),;
-
-  final String route;
-
-  const AppRoutes(this.route);
+  HomeScreen,
+  OnBoardingScreen,
+  RegisterScreen,
+  LoginScreen,
 }

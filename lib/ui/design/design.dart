@@ -5,6 +5,7 @@ class AppColors {
   static const Color lightPrimary = Color(0xFF5669FF);
   static const Color backgroundColor = Color(0xFFF2FEFF);
   static const Color darkBackgroundColor = Color(0xFF101127);
+  static const Color gray = Color(0xFF7B7B7B);
 }
 
 class AppImages {
@@ -69,14 +70,14 @@ class AppThemes {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-
       padding: EdgeInsets.symmetric(vertical: 12),
         backgroundColor: AppColors.lightPrimary,
-        textStyle: GoogleFonts.jockeyOne(
+        textStyle: GoogleFonts.inter(
           color: Colors.white,
           fontSize: 20,
           fontWeight: FontWeight.w500
         ),
+        foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12)
         )
@@ -91,6 +92,36 @@ class AppThemes {
     ),
     bottomAppBarTheme: BottomAppBarTheme(color: AppColors.lightPrimary),
     scaffoldBackgroundColor: AppColors.backgroundColor,
+    inputDecorationTheme: InputDecorationTheme(
+      floatingLabelBehavior: FloatingLabelBehavior.auto,
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16),
+        borderSide: BorderSide(
+            color: AppColors.lightPrimary,
+            width:1
+        ),
+      ),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16),
+        borderSide: BorderSide(
+            color: AppColors.gray,
+            width:1
+        ),
+      ),// Example: Set a default outline border
+      labelStyle: GoogleFonts.inter(color: AppColors.gray,
+      fontSize:16,
+        fontWeight: FontWeight.w500
+      ),
+      focusColor: AppColors.lightPrimary,
+      // Example: Style for the label text
+      hintStyle: GoogleFonts.inter(color: AppColors.gray,
+          fontSize:16,
+          fontWeight: FontWeight.w500
+      ),  // Example: Style for the hint text
+      contentPadding: EdgeInsets.all(16.0),
+      // Example: Default content padding
+      // Add other InputDecoration properties as needed
+    ),
   );
   static var darkTheme = ThemeData(
     appBarTheme: AppBarTheme(
