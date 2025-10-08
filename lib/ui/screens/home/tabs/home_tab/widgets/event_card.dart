@@ -1,9 +1,12 @@
+import 'package:evently_c16/database/model/event.dart';
 import 'package:evently_c16/extensions/context_extension.dart';
+import 'package:evently_c16/extensions/date_time_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EventCard extends StatelessWidget {
-  const EventCard({super.key});
+  final Event event;
+  const EventCard(this.event,{super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,7 @@ class EventCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: context.appColors.primary, width: 1),
         image: DecorationImage(
-          image: AssetImage('assets/images/Birthday.png'),
+          image: AssetImage(event.getCategoryImage()),
           fit: BoxFit.cover,
         ),
       ),
@@ -32,7 +35,7 @@ class EventCard extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  '21',
+                  '${event.date?.day}',
                   style: context.fonts.bodyMedium?.copyWith(
                     fontFamily: GoogleFonts.inter().fontFamily,
                     color: context.appColors.primary,
@@ -40,7 +43,7 @@ class EventCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Nov',
+                  event.date?.formatMonth()??"",
                   style: context.fonts.bodyMedium?.copyWith(
                     fontFamily: GoogleFonts.inter().fontFamily,
                     color: context.appColors.primary,
@@ -61,7 +64,7 @@ class EventCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'This is a Birthday Party ',
+                  event.title??"",
                   style: context.fonts.bodyMedium?.copyWith(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,

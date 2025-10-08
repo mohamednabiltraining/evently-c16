@@ -36,7 +36,7 @@ class AppThemes {
     ),
     colorScheme: ColorScheme.light(primary: AppColors.lightPrimary),
     textTheme: TextTheme(
-      bodyLarge: GoogleFonts.jockeyOne(
+      bodyLarge: GoogleFonts.inter(
         color: Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.bold,
@@ -57,12 +57,12 @@ class AppThemes {
         fontWeight: FontWeight.bold,
       ),
 
-      bodyMedium: GoogleFonts.jockeyOne(
+      bodyMedium: GoogleFonts.inter(
         color: Colors.white,
         fontSize: 16,
         fontWeight: FontWeight.w500,
       ),
-      bodySmall: GoogleFonts.jockeyOne(
+      bodySmall: GoogleFonts.inter(
         color: Colors.white,
         fontSize: 12,
         fontWeight: FontWeight.bold,
@@ -80,7 +80,8 @@ class AppThemes {
         foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12)
-        )
+        ),
+
       )
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -90,7 +91,7 @@ class AppThemes {
       selectedLabelStyle: TextStyle(color: Colors.white),
       unselectedLabelStyle: TextStyle(color: Colors.black),
     ),
-    bottomAppBarTheme: BottomAppBarThemeData(color: AppColors.lightPrimary),
+    bottomAppBarTheme: BottomAppBarTheme(color: AppColors.lightPrimary),
     scaffoldBackgroundColor: AppColors.backgroundColor,
     inputDecorationTheme: InputDecorationTheme(
       floatingLabelBehavior: FloatingLabelBehavior.auto,
@@ -137,7 +138,7 @@ class AppThemes {
     ),
     colorScheme: ColorScheme.light(primary: AppColors.lightPrimary),
     textTheme: TextTheme(
-      bodyLarge: GoogleFonts.jockeyOne(
+      bodyLarge: GoogleFonts.inter(
         color: Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.bold,
@@ -158,12 +159,12 @@ class AppThemes {
         fontWeight: FontWeight.bold,
       ),
 
-      bodyMedium: GoogleFonts.jockeyOne(
+      bodyMedium: GoogleFonts.inter(
         color: Colors.white,
         fontSize: 16,
         fontWeight: FontWeight.w500,
       ),
-      bodySmall: GoogleFonts.jockeyOne(
+      bodySmall: GoogleFonts.inter(
         color: Colors.white,
         fontSize: 12,
         fontWeight: FontWeight.bold,
@@ -191,7 +192,7 @@ class AppThemes {
       selectedLabelStyle: TextStyle(color: Colors.white),
       unselectedLabelStyle: TextStyle(color: Colors.black),
     ),
-    bottomAppBarTheme: BottomAppBarThemeData(color: AppColors.lightPrimary),
+    bottomAppBarTheme: BottomAppBarTheme(color: AppColors.lightPrimary),
     scaffoldBackgroundColor: AppColors.darkBackgroundColor,
   );
 }
