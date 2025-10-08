@@ -52,6 +52,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: languageProvider.getSelectedLocale(),
+      debugShowCheckedModeBanner: false,
       routes: {
         AppRoutes.OnBoardingScreen.name: (context) => const OnBoardingScreen(),
         AppRoutes.RegisterScreen.name : (context) => RegisterScreen(),
