@@ -5,13 +5,14 @@ class Event {
   String? desc;
   DateTime? date;
   DateTime? time;
-  String? category;
+  int? categoryId;
+  bool isFavorite = false;
 
   Event({
     this.id,
     this.creatorUserId,
     this.title,
-    this.category,
+    this.categoryId,
     this.date,
     this.time,
     this.desc,
@@ -23,7 +24,7 @@ class Event {
       creatorUserId: map?['creatorUserId'],
       title: map?['title'],
       desc: map?['desc'],
-      category: map?['category'],
+        categoryId: map?['categoryId'],
       time: DateTime.fromMillisecondsSinceEpoch(map?['time']),
     date: DateTime.fromMillisecondsSinceEpoch(map?['date'])
     );
@@ -37,20 +38,20 @@ class Event {
       'desc' : desc,
       'date' : date?.millisecondsSinceEpoch ,// convert Date time to milliseconds
       'time' : time?.millisecondsSinceEpoch ,// convert Date time to milliseconds
-      'category' : category,
+      'categoryId' : categoryId,
     };
   }
 
   String getCategoryImage() {
-    switch (category?.toLowerCase()) {
-      case 'birthday':
-        return 'assets/images/Birthday.png';
-      case 'gaming':
-        return 'assets/images/Gaming.png';
-      case 'sport':
+    switch (categoryId) {
+      case 1:
         return 'assets/images/Sport.png';
-      case 'workshop':
+      case 2:
+        return 'assets/images/Gaming.png';
+      case 3:
         return 'assets/images/Workshop.png';
+      case 4:
+        return 'assets/images/Birthday.png';
     }
     return '';
   }

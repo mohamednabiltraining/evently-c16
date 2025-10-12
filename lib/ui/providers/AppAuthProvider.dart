@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:evently_c16/database/UsersDao.dart';
 import 'package:evently_c16/database/model/AppUser.dart';
+import 'package:evently_c16/database/model/event.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -14,9 +15,16 @@ class AppAuthProvider extends ChangeNotifier{
    retrieveUserFromDatabase();
   }
 
+  bool isFavorite(Event event){
+    return _databaseUser?.favorites.contains(event.id)?? false;
+  }
   AppUser? getUser(){
     return _databaseUser;
   }
+  void updateFavorites(List<String> favorites){
+    _databaseUser?.favorites = favorites;
+  }
+
   void logout(){
     _fb_authService.signOut();
     _databaseUser = null;

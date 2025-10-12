@@ -4,6 +4,7 @@ import 'package:evently_c16/routes.dart';
 import 'package:evently_c16/ui/common/events_tabs.dart';
 import 'package:evently_c16/ui/common/tab_bar_item.dart';
 import 'package:evently_c16/ui/providers/AppAuthProvider.dart';
+import 'package:evently_c16/ui/screens/home/tabs/fav/fav.dart';
 import 'package:evently_c16/ui/screens/home/tabs/home_tab/home_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,9 +20,18 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int currentTabIndex = 0;
   int currentBottomNavIndex = 0;
-  List<Widget> tabs = [HomeTab(), HomeTab(), HomeTab(), HomeTab()];
+  late List<Widget> tabs;
+  @override
+  void initState() {
+    super.initState();
+    tabs = [
+      HomeTab(),
+      HomeTab(),
+      FavTab(),
+      HomeTab(),
+     ];
+  }
   @override
   Widget build(BuildContext context) {
     AppAuthProvider provider = Provider.of<AppAuthProvider>(context);
@@ -84,24 +94,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Column(
         children: [
-          Container(
-            decoration: BoxDecoration(
-                color:context.appColors.primary ,
-                shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(24),
-                  bottomRight: Radius.circular(24),
-              )
-      ),
-            child: EventsTabs(
-              Category.getCategories(includeAll: true),
-              currentTabIndex,
-            (index,category) {
-              setState(() {
-                currentTabIndex = index;
-              });
-            },),
-          ),
           Expanded(child: tabs[currentBottomNavIndex]),
         ],
       ),

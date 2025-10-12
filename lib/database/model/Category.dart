@@ -47,4 +47,17 @@ class Category{
     ]);
    return list;
   }
+  static String getCategoryImage(int categoryId) {
+    switch (categoryId) {
+      case 1:
+        return 'assets/images/Sport.png';
+      case 2:
+        return 'assets/images/Gaming.png';
+      case 3:
+        return 'assets/images/Workshop.png';
+      case 4:
+        return 'assets/images/Birthday.png';
+    }
+    return '';
+  }
 }

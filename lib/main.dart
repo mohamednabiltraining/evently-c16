@@ -11,7 +11,6 @@ import 'package:evently_c16/ui/screens/home/HomeScreen.dart';
 import 'package:evently_c16/ui/screens/login/LoginScreen.dart';
 import 'package:evently_c16/ui/screens/onBoarding/OnBoarding.dart';
 import 'package:evently_c16/ui/screens/register/RegisterScreen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

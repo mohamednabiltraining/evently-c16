@@ -43,7 +43,9 @@ class _AddEventScreenState extends State<AddEventScreen> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(16),
-                        child: Image(image: AssetImage('assets/images/${allCategories[selectedTabIndex].title}.png'))),
+                        child: Image(image: AssetImage(
+                            Category.getCategoryImage(allCategories[selectedTabIndex].id)
+                        ))),
                     EventsTabs(
                       allCategories,
                       reversed: true,
@@ -183,7 +185,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
       desc: descriptionController.text,
       date: selectedDate,
       time: selectedTime?.toDateTime(),
-      category: allCategories[selectedTabIndex].title,
+      categoryId: allCategories[selectedTabIndex].id,
       creatorUserId: authProvider.getUser()?.id,
     ) ;
     context.showLoadingDialog(
